@@ -1,37 +1,85 @@
+  <div id="pdfTable" #pdfTable>
 
-  <h4>{{ title }}</h4>
-  <div>Ref.: 
-    <a href="http://jsfiddle.net/ysotdgec/">http://jsfiddle.net/ysotdgec/</a>
+    <h4>{{ title }}</h4>
+    <div>Ref.: 
+      <a href="http://jsfiddle.net/ysotdgec/">http://jsfiddle.net/ysotdgec/</a>
+    </div>
+    <br>
+
+    <div id="container1">
+      <table class='table table-sm table-striped'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+      </table>
+      <table class='table table-sm table-striped'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  
+    <div id="container2">
+      <table class='table table-sm table-striped'>
+        <tbody>
+          <tr *ngFor="let item of listProducts">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+  </div>
+
+  <!-- <table class='table table-sm table-striped'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listProducts">
+        <td *ngIf="item.id % 2 === 1">{{ item.id }}</td>
+        <td *ngIf="item.id % 2 === 1">{{ item.name }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <table class='table table-sm table-striped'>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listProducts">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+    
+  <br>
+  <div>
+    <button (click)="exportPDF()" class="btn btn-warning btn-sm btn-round">
+      Exportar PDF
+    </button>
+    <button (click)="exportPDF2()" class="btn btn-warning btn-sm btn-round">
+      Exportar PDF 2
+    </button>
   </div>
   <br>
   
-  <div id="container1">
-    <table class='table table-striped'>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-        </tr>
-      </thead>
-    </table>
-    <table class='table table-striped'>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-
-  <div id="container2">
-    <table class='table table-striped'>
-      <tbody>
-        <tr *ngFor="let item of listProducts">
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
